@@ -1,38 +1,55 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  position:fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 999;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.scroll-img{
+  border: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.img-brands{
+  height: 200px;
+  width: 250px;
+}
+.reg-body{
+  min-height: 713px;
+  background-color: aquamarine;
+}
+.card-detail{
+  width:300px;
+}
+.cart-detail{
+  width:250px;
+}
+.food-img{
+  min-height: 180px;
+  max-height: 180px;
+}
+.order-detail h5{
+  color:antiquewhite;
+}
+.order-detail h6{
+  color:antiquewhite;
+}
+.order-detail p{
+  color:antiquewhite;
+}
+.main-order{
+  background-color: #333;
+ min-height: 665px;
+}
+.main-view{
+  background-color:darkgrey;
+  min-height: 665px;
+}
+.right-head{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content:space-between;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.order-table td{
+  color:antiquewhite;
 }
