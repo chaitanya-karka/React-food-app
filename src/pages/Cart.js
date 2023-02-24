@@ -15,18 +15,19 @@ function MyCart() {
         let delCart = cartData.filter((val, i) => (i != index));
         dispatch(setCartData(delCart));
     }
+    
     return (
         <div className='main-view pb-4'>
             <Header />
             <div className='mt-5 row m-0'>
-                {cartData.map((value, index) => {  
+                {cartData && cartData.map((value, index) => {  
                     return (
                         <div className='d-flex justify-content-center col-3  pt-4'>
                             <div className="card cart-detail p-2">
                                 <img className="card-img-top food-img" src={value.url} alt="Card image cap" />
                                 <div className="card-body text-left">
                                     <h5 >{value.name}</h5>
-                                    <h6 >Price: {value.price}</h6>
+                                    <h6 >Price: {value.price}rs</h6>
                                     <h6 >Currency: {value.currency}</h6>
                                     <h6 >Type: {value.type}</h6>
                                 </div>
@@ -37,7 +38,8 @@ function MyCart() {
                 })
                 }
             </div>
-            {cartData.length && isLog ? <button type='submit' onClick={() => { dispatch(setOrderList(cartData)); navigate('/confirmorders'); dispatch(setCartData('')) }}
+            
+            {cartData.length && isLog ? <button type='submit' onClick={() => { dispatch(setOrderList(cartData));  navigate('/confirmorders'); dispatch(setCartData('')) }} 
                 className='btn mt-2 btn-secondary mt-5'>Place Your order</button>
                 : <div>
                     <h3 className=' pt-5'>Your cart is empty</h3>

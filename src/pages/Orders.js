@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import Header from '../components/header';
 function Orders() {
     const orderData = useSelector((state) => state.mainslice.orderList)
@@ -12,7 +12,7 @@ function Orders() {
     return (
         <div className='main-order mt-5'>
             <Header />
-
+ 
             {orderData.length &&isLog ?
                 <div className='container mt-5 order-detail'>
                     <h2 className='text-primary pt-3 mb-5'>Your Orders</h2>

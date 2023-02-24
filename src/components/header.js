@@ -19,7 +19,7 @@ function Header() {
                             <Link to='/' className='text-white text-decoration-none'>Home</Link>
                         </li>
                         <li className="nav-item mx-4">
-                            <Link to='/cart' className='text-white text-decoration-none'>My cart</Link>
+                            <Link to='/cart' className='text-white text-decoration-none'>My Cart</Link>
                             <span className='text-white '> { isLog && cartData.length ? -cartLength : null}</span>
                         </li>
                         <li className="nav-item mx-4">

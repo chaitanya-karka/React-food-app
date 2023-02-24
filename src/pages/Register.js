@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { saveRegisterDetails, setRegisterData } from "../redux/slices/registerSlice";
-
+import ReCAPTCHA from "react-google-recaptcha";
 function Register() {
+    
     let navigate = useNavigate();
     const registerData = useSelector((state) => state.registerslice.registerData)
     const dispatch = useDispatch()
+    const [captcha, setCaptcha]=useState(false);
 
+    const Change = (value) =>{
+        console.log("Captcha value:", value);
+        if (value){
+            setCaptcha(true)
+        }
+    }
+
+    console.log("captch",captcha);
+    const Register =() =>{
+        if (captcha === true){
+            dispatch(saveRegisterDetails(registerData)); navigate('/login') 
+        }
+        else{
+            alert("Not a Human")
+        }
+    }
     return (
         <>
             <div>
@@ -34,9 +52,12 @@ function Register() {
                                                 <div className="form-outline mb-4">
                                                     <input className="form-control form-control-lg" type='password' placeholder="password" onChange={(e) => dispatch(setRegisterData({ ...registerData, password: e.target.value }))} />
                                                 </div>
-
+                                                <ReCAPTCHA
+                                                    sitekey="6Lc5SGskAAAAAJ1MjOHxVdrj5f4bH-fg4aNpsjnW"
+                                                    onChange={Change}
+                                                />
                                                 <div className="d-flex justify-content-center"  >
-                                                    <button className="btn btn-success" type="button" onClick={() => { dispatch(saveRegisterDetails(registerData)); navigate('/') }}>Register</button>
+                                                    <button className="btn btn-success mt-3" type="button" onClick={Register}>Register</button>
                                                 </div>
                                                 <p className="text-center  mt-5 mb-0">Have already an account? <Link to='/login' className="fw-bold  text-decoration-none">Login here</Link></p>
                                             </form>

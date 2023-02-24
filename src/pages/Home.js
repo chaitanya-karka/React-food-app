@@ -3,6 +3,7 @@ import Header from '../components/header'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { setFoodList } from '../redux/slices/slice';
+import Payment from '../components/payment';
 function Home() {
 
     const count = useSelector((state) => state.mainslice.foodList)
@@ -126,6 +127,7 @@ function Home() {
                                     </div>
                                 </div>
                             </div>
+                            <Payment/>
                         </>
                     )
                 })}

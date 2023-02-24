@@ -31,11 +31,10 @@ function View() {
                                                         <img className="card-img-top food-img" src={value.url} alt="Card image cap" />
                                                         <div className="card-body text-left ">
                                                             <h4 >{value.name}</h4>
-                                                            <h5 >price: {value.price}</h5>
+                                                            <h5 >price: {value.price}rs</h5>
                                                             <h5 >currency: {value.currency}</h5>
                                                             <h5 >type: {value.type}</h5>
-                                                        </div>
-                                                        
+                                                        </div>                                                        
                                                         <button type='submit' onClick={() => {isLog?dispatch(setCartData([...cartData, value])):navigate('/login')}} className='btn mt-2 btn-secondary'>Add to cart</button>
                                                     </div>
                                                 </div>
@@ -53,4 +52,4 @@ function View() {
     )
 }
 
-export default View
+export default View 

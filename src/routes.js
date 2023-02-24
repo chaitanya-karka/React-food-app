@@ -12,6 +12,7 @@ import Register from './pages/Register';
 import MyCart from './pages/Cart';
 import Orders from './pages/Orders';
 import ConfirmOrder from './pages/ConfirmOrder';
+import NewDjango from './new';
 function MainRoutes() {
     return (
         <Router>
@@ -22,6 +23,7 @@ function MainRoutes() {
                 <Route path='/register' exact element={<Register />} />
                 <Route path='/cart' exact element={<MyCart />} />
                 <Route path='/orders' exact element={<Orders />} />
+                <Route path='/new' exact element={<NewDjango/>} />
                 <Route path='/confirmorders' exact element={<ConfirmOrder />} />
             </Routes>
         </Router>
